@@ -7,12 +7,20 @@ describe("shuffle should...", () => {
     expect(result).toStrictEqual([]);
 })
 
-test('argument setn matches return', () => {
-  let result = shuffle([
-    "one","two", "three"
-  ]);
+test("can the shuffle function shuffle the items in the array provided.", async () => {
 
-  expect(result.length).toBe(3);
-})
+  let abcArr = ['a', 'b', 'c', 'd']
+  let result = shuffle(abcArr)
+  expect(abcArr).not.toStrictEqual(result)
+
+});
+
+test("are the items the same as in the array provided.", async () => {
+
+  let abcArr = ['a', 'b', 'c', 'd']
+  let result = shuffle(abcArr)
+  expect(result).toContain('a', 'b', 'c', 'd')
+
+});
 
 });
